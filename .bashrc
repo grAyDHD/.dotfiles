@@ -32,10 +32,23 @@ alias cp='cp -i'
 alias mv='mv -i'
 
 #directory aliases
-alias ngGo='cd ~/Code/Angular'
-alias ngEdu='cd ~/Code/Angular/Education'
+alias cdng='cd ~/Code/Web/Angular'
 alias cd.='cd ../'
+alias cd..='cd ../../'
+alias cd...='cd ../../../'
+alias cd....='cd ../../../../'
 alias cdw='cd ~/Code/Web'
+
+#conf aliases
+alias cdcn='cd ~/.config/nvim'
+alias cdca='cd ~/.config/alacritty'
+
+#angular aliases
+alias ngc='ng generate component'
+
+#source alias
+alias src='source .bashrc'
+
 # Color codes
 BLUE="\[\e[38;5;123m\]"
 LAVENDER="\[\e[38;5;219m\]"
