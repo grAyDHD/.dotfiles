@@ -31,8 +31,14 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 
-#directory aliases
+#Internship aliases
 alias cdng='cd ~/Code/Web/Angular'
+alias cdinf='cd ~/Code/Web/Angular/Internship/frontend'
+alias cdinfp='cd ~/Code/Web/Angular/Internship/frontend/web/projects'
+alias cdgth='cd ~/Code/Web/Angular/Internship/frontend/web/projects/gth'
+alias cdgthl='cd ~/Code/Web/Angular/Internship/frontend/web/projects/gth-legacy'
+
+#directory aliases
 alias cd.='cd ../'
 alias cd..='cd ../../'
 alias cd...='cd ../../../'
@@ -53,12 +59,14 @@ alias src='source .bashrc'
 BLUE="\[\e[38;5;123m\]"
 LAVENDER="\[\e[38;5;219m\]"
 NO_COLOR="\[\e[0m\]"
+DARK_BLUE="\[\e[38;5;6m\]"
+ORANGE="\[\e[38;5;202m\]"
 
 # PS1 customization
 if [[ -n ${TMUX} ]]; then
-    PS1="${BLUE}\\u${NO_COLOR}@${LAVENDER}\\h${NO_COLOR}:${NO_COLOR}\\w${NO_COLOR}\$\\n"
+    PS1="${DARK_BLUE}\\u${NO_COLOR}@${ORANGE}\\h${NO_COLOR}:${NO_COLOR}\\w${NO_COLOR}\$\\n"
 else
-    PS1="${BLUE}\\u${NO_COLOR}@${LAVENDER}\\h${NO_COLOR}:${NO_COLOR}\\w${NO_COLOR}\$ "
+    PS1="${DARK_BLUE}\\u${NO_COLOR}@${ORANGE}\\h${NO_COLOR}:${NO_COLOR}\\w${NO_COLOR}\$ "
 fi
 
 # Display neofetch if not in tmux and command exists
