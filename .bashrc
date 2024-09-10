@@ -17,9 +17,9 @@ if [[ -x /usr/bin/dircolors ]]; then
     alias egrep='egrep --color=auto'
 fi
 
-# Keyboard configuration aliases
-alias cs='setxkbmap -option ctrl:swapcaps' # Swap caps
-alias cr='setxkbmap -option'               # Revert swap
+
+alias pm='sudo nvidia-smi -pm ENABLED'
+alias logout="shopt -q login_shell && logout || qdbus org.kde.ksmserver"
 
 # tmux aliases
 alias tls='tmux ls'
@@ -44,16 +44,24 @@ alias cd..='cd ../../'
 alias cd...='cd ../../../'
 alias cd....='cd ../../../../'
 alias cdw='cd ~/Code/Web'
+alias md='mkdir'
+alias mf='touch'
+
+alias gba='cd ~/Code/GBA'
+alias tonc='cd ~/Code/GBA/libtonc-examples'
 
 #conf aliases
 alias cdcn='cd ~/.config/nvim'
 alias cdca='cd ~/.config/alacritty'
-
+#nv.b nv.t nv.c nmvim .bash
 #angular aliases
 alias ngc='ng generate component'
 
 #source alias
 alias src='source .bashrc'
+
+#script aliases
+alias uza='~/Code/ShellScripts/unzip_all.sh'
 
 # Color codes
 BLUE="\[\e[38;5;123m\]"
@@ -61,18 +69,26 @@ LAVENDER="\[\e[38;5;219m\]"
 NO_COLOR="\[\e[0m\]"
 DARK_BLUE="\[\e[38;5;6m\]"
 ORANGE="\[\e[38;5;202m\]"
+RED="\[\e[38;5;1m\]"
+PURP="\[\e[38;5;99m\]"
 
 # PS1 customization
 if [[ -n ${TMUX} ]]; then
-    PS1="${DARK_BLUE}\\u${NO_COLOR}@${ORANGE}\\h${NO_COLOR}:${NO_COLOR}\\w${NO_COLOR}\$\\n"
+    PS1="${PURP}\\u${NO_COLOR}@${RED}\\h${NO_COLOR}:${NO_COLOR}\\w${NO_COLOR}\$\\n"
 else
-    PS1="${DARK_BLUE}\\u${NO_COLOR}@${ORANGE}\\h${NO_COLOR}:${NO_COLOR}\\w${NO_COLOR}\$ "
+    PS1="${PURP}\\u${NO_COLOR}@${RED}\\h${NO_COLOR}:${NO_COLOR}\\w${NO_COLOR}\$ "
 fi
 
 # Display neofetch if not in tmux and command exists
-if [[ -n ${PS1} ]] && [[ -z ${TMUX} ]]; then
-	command -v neofetch &> /dev/null && neofetch
-fi
+#if [[ -n ${PS1} ]] && [[ -z ${TMUX} ]]; then
+#	command -v neofetch &> /dev/null && neofetch
+#fi
+
+export DEVKITPRO=/opt/devkitpro
+export DEVKITARM=/opt/devkitpro/devkitARM
+export DEVKITPPC=/opt/devkitpro/devkitPPC
+
+export PATH=$DEVKITARM/bin:$DEVKITPRO/tools/bin:$PATH
 
 
 export NVM_DIR="$HOME/.nvm"
